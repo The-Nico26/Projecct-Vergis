@@ -28,7 +28,7 @@ Voici quelque risque :
 
 Les clés usb et autres disque amovibles sont interdits. L'utilisation du cloud est conseillé.  
 
-## Les acces de chaque services
+## Les accès de chaque services
 Tout les services auront accès à :
 - Serveur de Mail
 - Internet
