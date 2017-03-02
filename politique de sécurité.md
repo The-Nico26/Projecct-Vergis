@@ -26,16 +26,26 @@ Voici un liste de risques :
 Voici quelque risque :
 - virus, ver, wabbit, cheval de Troie, logiciel espion
 
-Les clés usb et autres disque amovibles sont interdits. L'utilisation du cloud est conseillé.
+Les clés usb et autres disque amovibles sont interdits. L'utilisation du cloud est conseillé.  
 
 ## Les acces de chaque services
-### Le service Recherche et Développement
+Tout les services auront accès à :
+- Serveur de Mail
+- Internet
+- Site intranet
+Aucune communication direct est permis entre les services. La communication inter-service s'effectuera via e-mail.  
 
+### Le service Recherche et Développement
+Le service Recherche et Développement (R&D) pourra accéder au serveur de fichier qui lui est assigné.
+
+### Le service Informatique
+Le service informatique pourra accéder à tout les protocoles. Mais ne pourra pas interchanger directement entre les différents service informatique.
 
 ## Protocole autorisé autre que le service informatique :
 Voici une liste des protocoles autorisé :
-- FTP (seulement pour le service de recherche)
+- TFTP (seulement pour le service de recherche)
 - HTTP
+- HTTPS
 - SSH
 - POP3
 - SMTP
