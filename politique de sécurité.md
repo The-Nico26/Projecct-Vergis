@@ -65,7 +65,7 @@ Tout les switchs sont configurée en mode Access sauf l'interconnection entre sw
 Aucun port est en mode Auto !  
 
 ## Configuration des Routeurs :
-Il faut rajouter   
+Il faut rajouter la configuration des switchs. Puis rajouter les VLAN
 Les connexions entre routeurs sont de type : Serial
 
 ## Sécurité dans les routeurs :
