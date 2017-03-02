@@ -8,13 +8,16 @@ Nom de domaine pour chaque équipement : vergis.local
 #### Le nom de domain :
 > SwitchPrincipal(config)#ip domain-name vergis.local
 
+#### Empécher les recherches sur le réseau
+> SwitchPrincipal(config)#ip domain-lookup
+
 #### Le mot de passe enable :
 > SwitchPrincipal(config)#enable secret ProjetExiaSwitchPrincipal
 
 #### Le mot de passe console :
 > SwitchPrincipal(config)#line con 0  
 SwitchPrincipal(config-line)#password ProjetExiaSwitchPrincipal  
-SwitchPrincipal(config-line)#login  
+SwitchPrincipal(config-line)#login
 SwitchPrincipal(config-line)#exit
 
 #### Le mot de passe telnet :
@@ -25,10 +28,10 @@ SwitchPrincipal(config-line)#transport input ssh
 SwitchPrincipal(config-line)#end
 
 #### La bannière :
-> SwitchPrincipal(config)#banner motd #Acces reserve aux personnes autorisees#
+> SwitchPrincipal(config)#banner motd #Acces reserve aux personnes autorisees seulement#
 
 #### Le serveur SSH :
-> SwitchPrincipal(config)#crypto key generate rsa 1024  
+> SwitchPrincipal(config)#crypto key generate rsa  
 SwitchPrincipal(config)#ip ssh version 2  
 SwitchPrincipal(config)#ip ssh time-out 60  
 SwitchPrincipal(config)#ip ssh authentication-retries 3  
@@ -39,10 +42,11 @@ SwitchPrincipal(config)#ip ssh authentication-retries 3
 N'oublie pas de sauvegarder :  
 > SwitchPrincipal#write
 
-## Mise en place des trunks
+## Mise en place des VLAN natives et trunk
 #### Commande :
-> SwitchPrincipal(config)#interface {type} {numéro}  
-SwitchPrincipal(config-if)#switchport mode trunk
+> SwitchPrincipal(config)#interface {type} {numéro}    
+SwitchPrincipal(config-if)#switchport mode trunk  
+SwitchPrincipal(config-if)#switchport trunk native vlan {numéroVLANManagement}  
 
 #### Vérification :
 > SwitchPrincipal(config)#show interfaces trunk
