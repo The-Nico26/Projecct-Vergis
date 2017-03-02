@@ -78,7 +78,7 @@ ex :
 
 ### Mot de passe
 Le routeur possèdera un mot de passe pour les lignes virtuelles et pour le SSH.  
-Ce mot de passe devra commencer par "projetExia" puis suivi du nom du routeur en minuscule.  
+Ce mot de passe devra commencer par "ProjetExia" puis suivi du nom du routeur en minuscule.  
 
 /!\ Tout configuration modifier devra être enregistrer dans le startup-config
 
