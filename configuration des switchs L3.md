@@ -52,8 +52,8 @@ SwitchPrincipal(config-if)#switchport trunk native vlan {numéroVLANManagement}
 > SwitchPrincipal(config)#show interfaces trunk
 
 #### Liaison entre switch et pare-feu
-> SwitchPrincipal(config-if)#switchport trunk encapsulation dot1q
-SwitchPrincipal(config-if)#switchport mode trunk
+> SwitchPrincipal(config-if)#switchport trunk encapsulation dot1q  
+SwitchPrincipal(config-if)#switchport mode trunk  
 
 ## Mettre en place le serveur VTP
 #### Le domaine VTP et la version
