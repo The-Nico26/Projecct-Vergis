@@ -90,3 +90,28 @@ SwitchPrincipal(config-vlan)#ip address {ipVlan} {maskVlan}
 
 N'oublie pas de sauvegarder :  
 > SwitchPrincipal#write
+
+
+## Répartition des charges
+
+### Premier switch
+
+On séléctionne la plage d'inerface a grouper puis on configure etherchannel.
+
+> SwitchPrincipal(config)# interface range f0 /13 -15
+> SwitchPrincipal(config-if-range)# channel-group 1 mode active
+
+### Deuxième switch
+
+On fonctionne sur le même principe pour le seucond switch en le passant en mode passif sur le même groupe de etherchannel
+
+> SwitchPrincipal(config)# interface range f0 /13 -15
+> SwitchPrincipal(config-if-range)# channel-group 1 mode passive
+
+### Conséquences & Sauvegarde
+
+Une nouvelle interface virtuell `Port-channel 1` est créet et doit etre configurée comme une interface standard.
+
+N'obliez pas de sauvegarde
+
+> SwitchPrincipal(config)#write
