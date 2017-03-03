@@ -60,17 +60,18 @@ Pour le service informatique, l'ensemble des protocoles est autorisé
 
 ## Configuration des Switch de niveau 2 :
 Tout les ports sont fermées et mis sur une VLAN avec aucune permission dessu si celui-ci n'est pas branché.  
-Le mode VTP est en mode client pour les switchs d'étage et en mode VTP serveur pour le switch de rez-de-chausée  
+Le mode VTP est en mode client pour les switchs d'étage et en mode VTP serveur pour le switch de rez-de-chausée.  
 Tout les switchs sont configurée en mode Access sauf l'interconnection entre switchs en mode Trunk.  
 Aucun port est en mode Auto !  
 
 ## Configuration des Routeurs :
-Il faut rajouter la configuration des switchs. Puis rajouter les VLAN
-Les connexions entre routeurs sont de type : Serial
+[Voir le dossier de configuration des routeurs](configuration des routeurs.md)  
+Puis ajouter les différentes régles pour les ACLS selon les services.
 
-## Sécurité dans les routeurs :
+## Sécurité dans l'ensemble des équipements :
 Chaque routeur devra afficher un mot avant tout manipulation de la console.
-### Nom du routeur
+
+### Nom de l'équipement
 Chaque routeur possèdera le nom spécifique à sa fonction  
 ex :
 - RAccess1
