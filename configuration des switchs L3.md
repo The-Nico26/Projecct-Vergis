@@ -51,6 +51,10 @@ SwitchPrincipal(config-if)#switchport trunk native vlan {numéroVLANManagement}
 #### Vérification :
 > SwitchPrincipal(config)#show interfaces trunk
 
+#### Liaison entre switch et pare-feu
+> SwitchPrincipal(config-if)#switchport trunk encapsulation dot1q
+SwitchPrincipal(config-if)#switchport mode trunk
+
 ## Mettre en place le serveur VTP
 #### Le domaine VTP et la version
 > SwitchPrincipal(config)#vtp domain vergis.local  
