@@ -46,8 +46,8 @@ N'oublie pas de sauvegarder :
 Avant tout manipulation, voir [les numéros des VLANs](numero VLAN.md)
 #### commande :
 > RouteurPrincipal(config)#interface [range] {type numero}  
+RouteurPrincipal(config-if)#encapsulation dot1q {numeroVlan}   
 RouteurPrincipal(config-if)#ip address {ip} {mask}  
-RouteurPrincipal(config-if)#encapsulation dot1q   
 RouteurPrincipal(config-if)#no shutdown
 
 N'oublie pas de sauvegarder :  
