@@ -102,7 +102,7 @@ SwitchPrincipal(config-if-range)# channel-group 1 mode active
 
 ### Deuxième switch
 
-On fonctionne sur le même principe pour le seucond switch en le passant en mode passif sur le même groupe de etherchannel  
+On fonctionne sur le même principe pour le second switch en le passant en mode passif sur le même groupe de etherchannel  
 
 > SwitchPrincipal(config)# interface range f0 /13 -15  
 SwitchPrincipal(config-if-range)# channel-group 1 mode passive  
