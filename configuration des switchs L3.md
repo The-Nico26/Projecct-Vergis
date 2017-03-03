@@ -17,7 +17,7 @@ Nom de domaine pour chaque équipement : vergis.local
 #### Le mot de passe console :
 > SwitchPrincipal(config)#line con 0  
 SwitchPrincipal(config-line)#password ProjetExiaSwitchPrincipal  
-SwitchPrincipal(config-line)#login
+SwitchPrincipal(config-line)#login  
 SwitchPrincipal(config-line)#exit
 
 #### Le mot de passe telnet :
@@ -93,20 +93,19 @@ N'oublie pas de sauvegarder :
 
 
 ## Répartition des charges
-
 ### Premier switch
 
 On séléctionne la plage d'inerface a grouper puis on configure etherchannel.
 
-> SwitchPrincipal(config)# interface range f0 /13 -15
-> SwitchPrincipal(config-if-range)# channel-group 1 mode active
+> SwitchPrincipal(config)# interface range f0 /13 -15  
+SwitchPrincipal(config-if-range)# channel-group 1 mode active  
 
 ### Deuxième switch
 
-On fonctionne sur le même principe pour le seucond switch en le passant en mode passif sur le même groupe de etherchannel
+On fonctionne sur le même principe pour le seucond switch en le passant en mode passif sur le même groupe de etherchannel  
 
-> SwitchPrincipal(config)# interface range f0 /13 -15
-> SwitchPrincipal(config-if-range)# channel-group 1 mode passive
+> SwitchPrincipal(config)# interface range f0 /13 -15  
+SwitchPrincipal(config-if-range)# channel-group 1 mode passive  
 
 ### Conséquences & Sauvegarde
 
