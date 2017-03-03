@@ -54,17 +54,17 @@ N'oublie pas de sauvegarder :
 > RouteurPrincipal#write
 
 ## Configuration du HSRP
-## Configuration du premier routeur
-> RouteurPrincipal(config)#interface {type numero}
-RouteurPrincipal(config-if)#ip address {ip} {mask}
-RouteurPrincipal(config-if)#no shutdown
-RouteurPrincipal(config-if)#standby 100 ip {ip}
-RouteurPrincipal(config-if)#standby 100 preempt
+#### Configuration du premier routeur
+> RouteurPrincipal(config)#interface {type numero}  
+RouteurPrincipal(config-if)#ip address {ip} {mask}  
+RouteurPrincipal(config-if)#no shutdown  
+RouteurPrincipal(config-if)#standby 100 ip {ip}  
+RouteurPrincipal(config-if)#standby 100 preempt  
 
-## Configuration du second routeur
-> RouteurPrincipalBack(config)#interface{type numero}
-RouteurPrincipalBack(config-if)#ip address {ip} {mask}
-RouteurPrincipalBack(config-if)#standby 100 ip {ip}
-RouteurPrincipalBack(config-if)#standby 100 priority 110
-RouteurPrincipalBack(config-if)#standby 100 preempt
-RouteurPrincipalBack(config-if)#end
+#### Configuration du second routeur
+> RouteurPrincipalBack(config)#interface{type numero}  
+RouteurPrincipalBack(config-if)#ip address {ip} {mask}  
+RouteurPrincipalBack(config-if)#standby 100 ip {ip}  
+RouteurPrincipalBack(config-if)#standby 100 priority 110  
+RouteurPrincipalBack(config-if)#standby 100 preempt  
+RouteurPrincipalBack(config-if)#end  
