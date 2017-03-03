@@ -106,23 +106,23 @@ IP network :
 
 |Interface | VLAN n°  | IP         | Mask        |
 |----------|----------|------------|-------------|
-|Fa 1/0.11 | 11 Wifi |192.168.0.6 |255.255.252.0|
-|Fa 1/0.12 | 12 Service Rercheche et Developpement |192.168.4.6 |255.255.254.0|
-|Fa 1/0.13 | 13 Management |192.168.6.6 |255.255.255.0|
-|Fa 1/0.14 | 14 Service informatique |192.168.7.6 |255.255.255.192|
-|Fa 1/0.15 | 15 Service informatique developpement |192.168.7.8 |255.255.255.224|
-|Fa 1/0.16 | 16 Service informatique support |192.168.7.38 |255.255.255.240|
-|Fa 1/0.17 | 17 Service informatique infrastructure |192.168.7.54 |255.255.255.240|
-|Fa 1/0.18 | 18 Service direction |192.168.7.70 |255.255.255.192|
-|Fa 1/0.19 | 19 Service communication |192.168.7.134 |255.255.255.224|
-|Fa 1/0.20 | 20 Service logistique |192.168.7.166 |255.255.255.224|
-|Fa 1/0.21 | 21 Service supports clients |192.168.7.198 |255.255.255.224|
-|Fa 1/0.22 | 22 DMZ |192.168.7.230 |255.255.255.224|
-|Fa 1/0.23 | 23 Intranet |192.168.8.6 |255.255.255.224|
-|Fa 1/0.24 | 24 Service RH |192.168.8.38 |255.255.255.224|
-|Fa 1/0.25 | 25 Service comptabilité |192.168.8.70 |255.255.255.224|
-|Fa 1/0.26 | 26 Service secretariat |192.168.8.102 |255.255.255.224|
-|Fa 1/0.27 | 27 Service secretariat direction |192.168.8.134 |255.255.255.224|
+|VLAN11 | 11 Wifi |192.168.0.6 |255.255.252.0|
+|VLAN12 | 12 Service Rercheche et Developpement |192.168.4.6 |255.255.254.0|
+|VLAN13 | 13 Management |192.168.6.6 |255.255.255.0|
+|VLAN14 | 14 Service informatique |192.168.7.6 |255.255.255.192|
+|VLAN15 | 15 Service informatique developpement |192.168.7.8 |255.255.255.224|
+|VLAN16 | 16 Service informatique support |192.168.7.38 |255.255.255.240|
+|VLAN17 | 17 Service informatique infrastructure |192.168.7.54 |255.255.255.240|
+|VLAN18 | 18 Service direction |192.168.7.70 |255.255.255.192|
+|VLAN19 | 19 Service communication |192.168.7.134 |255.255.255.224|
+|VLAN20 | 20 Service logistique |192.168.7.166 |255.255.255.224|
+|VLAN21 | 21 Service supports clients |192.168.7.198 |255.255.255.224|
+|VLAN22 | 22 DMZ |192.168.7.230 |255.255.255.224|
+|VLAN23 | 23 Intranet |192.168.8.6 |255.255.255.224|
+|VLAN24 | 24 Service RH |192.168.8.38 |255.255.255.224|
+|VLAN25 | 25 Service comptabilité |192.168.8.70 |255.255.255.224|
+|VLAN26 | 26 Service secretariat |192.168.8.102 |255.255.255.224|
+|VLAN27 | 27 Service secretariat direction |192.168.8.134 |255.255.255.224|
 |||||
 |VLAN11 | 11 Wifi |192.168.0.7 |255.255.252.0|
 |VLAN12 | 12 Service Rercheche et Developpement |192.168.4.7 |255.255.254.0|
