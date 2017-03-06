@@ -66,7 +66,7 @@ IP network :
 |Fa 1/0.26 | 26 Service secretariat |192.168.8.99 |255.255.255.224|
 |Fa 1/0.27 | 27 Service secretariat direction |192.168.8.131 |255.255.255.224|
 
-# Routeur Principal Backup Pool (HSRP)
+# Routeur Pool (HSRP)
 
 |Interface | VLAN n°  | IP         | Mask        |
 |----------|----------|------------|-------------|
