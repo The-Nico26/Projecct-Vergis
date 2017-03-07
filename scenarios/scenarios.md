@@ -19,3 +19,6 @@ que ce soit au niveau des ACLs, de la redondance, de l'accès à l'intranet ou i
 - Création d'un ordinateur dans un switch d'access
 - Mettre le pc en mode DHCP
 
+## Sécurité
+- Connexion en ssh
+- Connexion depuis l'extérieur
