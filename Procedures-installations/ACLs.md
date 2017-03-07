@@ -31,7 +31,7 @@ Les ACLs seront installées sur les switchs de niveau 3 et certaines sur les rou
 ## Autoriser DHCP : 
 
 	access-list DHCP-PERM permit udp any ipserv eq 67
-	access-list DHCP-PERM permit udp any ipserv eq 68
+	access-list DHCP-PERM permit udp ipserv any eq 68
 
 ## Permettre trafic DNS : 
 	access-list DNS-PERM permit udp any any eq domain
