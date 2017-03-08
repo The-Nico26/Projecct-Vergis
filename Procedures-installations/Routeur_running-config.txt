@@ -1,0 +1,110 @@
+!
+version 12.2
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname Routeur
+!
+!
+!
+enable secret 5 $1$mERr$hx5rVt7rPNoS4wqbXKX7m0
+!
+!
+!
+!
+!
+!
+ip cef
+no ipv6 cef
+!
+!
+!
+username admin secret 5 $1$mERr$hx5rVt7rPNoS4wqbXKX7m0
+!
+!
+!
+!
+!
+!
+!
+!
+ip ssh version 1
+ip ssh time-out 60
+ip domain-name vergis.fr
+!
+!
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/0
+ ip address 192.168.10.2 255.255.255.252
+ ip nat inside
+ duplex auto
+ speed auto
+!
+interface FastEthernet1/0
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface Serial2/0
+ ip address 81.79.100.2 255.255.255.252
+ ip access-group DMZ-PERM in
+ ip nat outside
+ clock rate 2000000
+!
+interface Serial3/0
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface FastEthernet4/0
+ no ip address
+ shutdown
+!
+interface FastEthernet5/0
+ no ip address
+ shutdown
+!
+ip nat inside source list 2 interface Serial2/0 overload
+ip nat inside source list 3 interface Serial2/0 overload
+ip classless
+ip route 0.0.0.0 0.0.0.0 Serial2/0 
+ip route 192.168.0.0 255.255.0.0 FastEthernet0/0 
+!
+ip flow-export version 9
+!
+!
+access-list 3 permit 192.168.2.0 0.0.0.255
+access-list 2 permit any
+ip access-list extended DMZ-PERM
+!
+banner motd  Access reserve aux personnes autorisees seulement 
+!
+!
+!
+!
+line con 0
+ password cisco
+ login
+!
+line aux 0
+!
+line vty 0 4
+ password cisco
+ login
+ transport input ssh
+line vty 5 15
+ password cisco
+ login
+ transport input ssh
+!
+!
+!
+end
+

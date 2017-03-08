@@ -1,0 +1,218 @@
+!
+version 12.2
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname Distrib
+!
+!
+!
+enable secret 5 $1$mERr$hx5rVt7rPNoS4wqbXKX7m0
+!
+!
+!
+!
+!
+!
+!
+!
+username admin secret 5 $1$mERr$hx5rVt7rPNoS4wqbXKX7m0
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip ssh version 1
+ip ssh time-out 60
+ip domain-name vergis.fr
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface Port-channel 2
+!
+interface Port-channel 3
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ switchport nonegotiate
+!
+interface Port-channel 4
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ switchport nonegotiate
+!
+interface Port-channel 6
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ switchport nonegotiate
+!
+interface FastEthernet0/1
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface FastEthernet0/2
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface FastEthernet0/3
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface FastEthernet0/4
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface FastEthernet0/5
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ switchport nonegotiate
+ channel-group 3 mode active
+!
+interface FastEthernet0/6
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ switchport nonegotiate
+ channel-group 4 mode active
+!
+interface FastEthernet0/7
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ switchport nonegotiate
+ channel-group 6 mode active
+!
+interface FastEthernet0/8
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ switchport nonegotiate
+ channel-group 3 mode active
+!
+interface FastEthernet0/9
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ switchport nonegotiate
+ channel-group 4 mode active
+!
+interface FastEthernet0/10
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ switchport nonegotiate
+ channel-group 6 mode active
+!
+interface FastEthernet0/11
+!
+interface FastEthernet0/12
+!
+interface FastEthernet0/13
+!
+interface FastEthernet0/14
+!
+interface FastEthernet0/15
+!
+interface FastEthernet0/16
+!
+interface FastEthernet0/17
+!
+interface FastEthernet0/18
+!
+interface FastEthernet0/19
+!
+interface FastEthernet0/20
+!
+interface FastEthernet0/21
+!
+interface FastEthernet0/22
+!
+interface FastEthernet0/23
+!
+interface FastEthernet0/24
+!
+interface GigabitEthernet0/1
+!
+interface GigabitEthernet0/2
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan2
+ mac-address 000a.f3db.7801
+ ip address 192.168.2.4 255.255.255.0
+ standby 202 ip 192.168.2.3
+ standby 202 priority 110
+ standby 202 preempt
+!
+interface Vlan3
+ mac-address 000a.f3db.7802
+ ip address 192.168.3.4 255.255.255.0
+ standby 203 ip 192.168.3.3
+ standby 203 priority 110
+ standby 203 preempt
+!
+interface Vlan4
+ mac-address 000a.f3db.7803
+ ip address 192.168.4.4 255.255.255.0
+ standby 204 ip 192.168.4.3
+ standby 204 priority 110
+ standby 204 preempt
+!
+interface Vlan5
+ mac-address 000a.f3db.7804
+ ip address 192.168.5.4 255.255.255.0
+ standby 205 ip 192.168.5.3
+ standby 205 priority 110
+ standby 205 preempt
+!
+interface Vlan6
+ mac-address 000a.f3db.7805
+ ip address 192.168.6.4 255.255.255.0
+ standby 206 ip 192.168.6.3
+ standby 206 priority 110
+ standby 206 preempt
+!
+interface Vlan7
+ mac-address 000a.f3db.7806
+ ip address 192.168.7.4 255.255.255.0
+ standby 207 ip 192.168.7.3
+ standby 207 priority 110
+ standby 207 preempt
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+banner motd Access reserve aux personnes autorisees seulement 
+!
+!
+!
+!
+line con 0
+ password cisco
+ login
+!
+line aux 0
+!
+line vty 0 4
+ password cisco
+ login local
+ transport input ssh
+line vty 5 15
+ password cisco
+ login local
+ transport input ssh
+!
+!
+!
+end
+

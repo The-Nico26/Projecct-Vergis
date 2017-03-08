@@ -1,0 +1,213 @@
+!
+version 12.2
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname SwitchP
+!
+!
+!
+enable secret 5 $1$mERr$hx5rVt7rPNoS4wqbXKX7m0
+!
+!
+!
+!
+!
+ip routing
+!
+!
+!
+!
+username admin secret 5 $1$mERr$hx5rVt7rPNoS4wqbXKX7m0
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip ssh version 1
+ip ssh time-out 60
+ip domain-name vergis.fr
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/1
+ no switchport
+ ip address 192.168.10.1 255.255.255.252
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/2
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface FastEthernet0/3
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface FastEthernet0/4
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface FastEthernet0/5
+!
+interface FastEthernet0/6
+!
+interface FastEthernet0/7
+!
+interface FastEthernet0/8
+!
+interface FastEthernet0/9
+!
+interface FastEthernet0/10
+!
+interface FastEthernet0/11
+!
+interface FastEthernet0/12
+!
+interface FastEthernet0/13
+!
+interface FastEthernet0/14
+!
+interface FastEthernet0/15
+!
+interface FastEthernet0/16
+!
+interface FastEthernet0/17
+!
+interface FastEthernet0/18
+!
+interface FastEthernet0/19
+!
+interface FastEthernet0/20
+!
+interface FastEthernet0/21
+!
+interface FastEthernet0/22
+!
+interface FastEthernet0/23
+!
+interface FastEthernet0/24
+!
+interface GigabitEthernet0/1
+!
+interface GigabitEthernet0/2
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan2
+ mac-address 0010.11de.6c01
+ ip address 192.168.2.7 255.255.255.0
+ ip helper-address 192.168.4.10
+ ip access-group IN in
+ standby 102 ip 192.168.2.5
+ standby 102 priority 110
+ standby 102 preempt
+!
+interface Vlan3
+ mac-address 0010.11de.6c02
+ ip address 192.168.3.7 255.255.255.0
+ ip helper-address 192.168.4.10
+ ip access-group IN in
+ standby 103 ip 192.168.3.5
+ standby 103 priority 110
+ standby 103 preempt
+!
+interface Vlan4
+ mac-address 0010.11de.6c03
+ ip address 192.168.4.7 255.255.255.0
+ ip helper-address 192.168.4.10
+ ip access-group IN in
+ standby 104 ip 192.168.4.5
+ standby 104 priority 110
+ standby 104 preempt
+!
+interface Vlan5
+ mac-address 0010.11de.6c04
+ ip address 192.168.5.7 255.255.255.0
+ ip helper-address 192.168.4.10
+ ip access-group IN in
+ standby 105 ip 192.168.5.5
+ standby 105 priority 110
+ standby 105 preempt
+!
+interface Vlan6
+ mac-address 0010.11de.6c05
+ ip address 192.168.6.7 255.255.255.0
+ ip helper-address 192.168.4.10
+ ip access-group IN in
+ standby 106 ip 192.168.6.5
+ standby 106 priority 110
+ standby 106 preempt
+!
+interface Vlan7
+ mac-address 0010.11de.6c06
+ ip address 192.168.7.7 255.255.255.0
+ ip helper-address 192.168.4.10
+ ip access-group IN in
+ standby 107 ip 192.168.7.5
+ standby 107 priority 110
+ standby 107 preempt
+!
+router eigrp 1
+ network 192.168.2.0
+ network 192.168.3.0
+ network 192.168.4.0
+ auto-summary
+!
+ip classless
+ip route 0.0.0.0 0.0.0.0 192.168.10.2 
+!
+ip flow-export version 9
+!
+!
+ip access-list extended IN
+ permit ip 192.168.0.0 0.0.255.255 10.0.0.0 0.255.255.255
+ permit ip 192.168.6.0 0.0.0.255 any
+ deny tcp any any eq 22
+ permit icmp any any echo-reply
+ permit tcp 192.168.0.0 0.0.255.255 host 192.168.4.8 eq www
+ permit tcp host 192.168.4.8 eq www 192.168.0.0 0.0.255.255
+ permit udp any host 255.255.255.255 eq bootps
+ permit ip host 192.168.4.10 any
+ permit udp 192.168.0.0 0.0.255.255 host 192.168.4.9 eq domain
+ permit udp host 192.168.4.9 192.168.0.0 0.0.255.255
+ permit tcp 192.168.0.0 0.0.255.255 host 192.168.3.9 eq pop3
+ permit tcp host 192.168.3.9 eq pop3 any
+!
+banner motd  Access reserve aux personnes autorisees seulement 
+!
+!
+!
+!
+line con 0
+ password cisco
+ login
+!
+line aux 0
+!
+line vty 0 4
+ password cisco
+ login local
+ transport input ssh
+line vty 5 15
+ password cisco
+ login local
+ transport input ssh
+!
+!
+!
+end
+
